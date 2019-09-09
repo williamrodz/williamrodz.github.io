@@ -20,11 +20,16 @@ body{
     height: 100%;
     width: 100%;
     padding: 10px;
+    padding-left: 40px;
 }
 
 .header-title{
   font-size: 60px;
 
+}
+
+.header-content{
+  font-size: 30px;
 }
 
 .navbar.transparent.navbar-inverse .navbar-inner {
