@@ -27,11 +27,19 @@ body{
 }
 .header-title{
   font-size: 60px;
-
 }
 
 .header-content{
   font-size: 30px;
+}
+
+.contact-icons-row{
+  padding-top: 0px;
+  margin-left: 17px;
+
+}
+.icon-image{
+  padding-right: 25px;
 }
 
 .navbar.transparent.navbar-inverse .navbar-inner {
