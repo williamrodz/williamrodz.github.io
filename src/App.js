@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import './App.css';
-
-
+import ReactGA from 'react-ga';
 
 const Header = (props)=>{
   return(
@@ -127,6 +126,9 @@ const SocialMedia = (props)=>(
 
 
 function App() {
+  ReactGA.initialize('UA-110490349-2');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+  
   const [selectedSection,setSelectedSection] = useState(null)
 
 
