@@ -1,6 +1,13 @@
 import React,{useState} from 'react';
 import './App.css';
 import ReactGA from 'react-ga';
+import TicTacToe from './EmojiTicTacToe';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const Header = (props)=>{
   return(
@@ -194,4 +201,24 @@ function App() {
   );
 }
 
-export default App;
+
+
+const AppWithRouter = (props) =>{
+  return (
+    <Router>
+        <Switch>
+          <Route path="/tictactoe">
+            <TicTacToe />
+          </Route>
+          <Route path="/">
+            <App />
+          </Route>
+        </Switch>
+
+    </Router>
+  )
+
+}
+
+
+export default AppWithRouter;
