@@ -20,7 +20,10 @@ code {
   background-color: #34495e;
   color: white;
 }
-
+.tagLine{
+  margin-top: 2em;
+  font-style: italic;
+}
 .appDescriptionRow{
   justify-content: center;
   margin:2em;
@@ -41,11 +44,12 @@ code {
   display: flex;
   flex-direction: column;
   margin: 0.25em;
+  justify-content: center;
 
 }
 
 .gallery{
-  width: 50em;
+  width: 80%;
   overflow-x: auto;
   overflow-y: hidden; 
 }
@@ -53,11 +57,19 @@ code {
 .galleryPhoto{
   width:10em;
   margin-left: 2em;
+  border-radius: 1em;
 }
 
 .descriptionBody{
+  margin-top: 2em;
   text-align: justify;
 }
+
+.descriptionTitle{
+  font-size: 1em;
+  margin-top: 1em;
+  font-weight: bold;
+} 
 
 .flexRow{
   display: flex;
@@ -67,6 +79,11 @@ code {
 .flexColumn{
   display: flex;
   flex-direction: column;  
+}
+
+.supportRow{
+  margin-top:1em;
+  flex-direction: column;
 }
 
 .copyrightRow{

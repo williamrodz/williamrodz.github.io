@@ -6,7 +6,7 @@ import DarkModeAI from './tictactoe/DarkModeAI.png';
 import HomeScreen from './tictactoe/HomeScreen.png';
 import Unicorn from './tictactoe/Unicorn.png';
 import appIcon from './tictactoe/icon.png'
-
+import Button from 'react-bootstrap/Button';
 
 const Photo = (props) =>{
     return (
@@ -39,24 +39,36 @@ const Gallery = (props) =>{
 const AppDescription = (props) =>{
     return (
         <div className="flexColumn">
-            <h3>Play against a friend or against an AI with three different levels! Choose your avatar out of the set of emojis and play against a friend or an AI. Dark mode compatible! </h3>
+            <div className="tagLine">
+                <h4>Play against a friend or against an AI with three different levels!</h4>
+                <h4>Choose your avatar out of the set of emojis and play against a friend or an AI.</h4>
+                <h4>Dark mode compatible! </h4>
+            </div>
             <div className="descriptionBody">
-<h4>Enjoy a modern spin on classic game</h4>
+<div className="descriptionTitle">Enjoy a modern spin on classic game</div>
 {<br/>}
 Instead of simple X's and O's, choose your avatar out of the hundreds of emoji characters. 
 
-PLAY AGAINST A FRIEND OR AN ARTIFICIAL INTELLIGENCE BOT
-
+<div className="descriptionTitle">Play against a friend or an AI!</div>
 You can have fun with a nearby friend and play multiple rounds! However, you can go solo against an AI with three different difficulty modes.
 
-<h4>Keep track of scores</h4>
+<div className="descriptionTitle">Keep track of scores</div>
 
 Playing best two out of three? Best 5 out of 7? Or have your own custom set of games? Keep track of winners of multiple games as you play multiple rounds of Tic Tac Toe.
 
-<h4>Dark mode compatible</h4>
+<div className="descriptionTitle">Dark mode compatible</div>
 
 Playing at night or simply prefer the darker aesthetic? The app is dark mode compatible to supplement your most comfortable viewing experience.      
             </div>            
+        </div>
+    )
+}
+
+const SupportRow = (props) =>{
+    return (
+        <div className="supportRow">
+            <h4>Got a question, need support, or have suggestions?</h4>
+            <Button variant="primary" href="mailto:support@wi11iam.com">Email Support</Button>
         </div>
     )
 }
@@ -67,15 +79,14 @@ const EmojiTacToe = (props) =>{
 
     let photos = [AIselection,ChooseEmojis,DarkMode,DarkModeAI,HomeScreen,Unicorn]
     return(
-        <div className="tictactoeContainer">
+        <div className="tictactoeContainer flexColumn">
             <div className="flexRow appDescriptionRow">
                 <AppIcon/>
                 <div className="appTitle">Emoji Tic Tac Toe!</div>
             </div>
-            <div className="flexRow">
-                <Gallery photos={photos}/>
-            </div>
+            <Gallery photos={photos}/>
             <AppDescription/>
+            <SupportRow/>
             <CopyRightRow/>
         </div>
     )
