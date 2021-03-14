@@ -75,6 +75,8 @@ const SupportRow = (props) =>{
 
 const CopyRightRow = (props) => <div className="copyrightRow">Copyright William A. Rodriguez Jimenez</div>
 
+
+
 const EmojiTacToe = (props) =>{
 
     let photos = [AIselection,ChooseEmojis,DarkMode,DarkModeAI,HomeScreen,Unicorn]

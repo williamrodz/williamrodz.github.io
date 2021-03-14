@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import './App.css';
 import ReactGA from 'react-ga';
 import TicTacToe from './EmojiTicTacToe';
+import TicTacToePrivacy from './AppPrivacyPolicy';
 import {
   BrowserRouter as Router,
   Switch,
@@ -207,6 +208,9 @@ const AppWithRouter = (props) =>{
   return (
     <Router>
         <Switch>
+          <Route path="/tictactoeprivacy">
+            <TicTacToePrivacy />
+          </Route>          
           <Route path="/tictactoe">
             <TicTacToe />
           </Route>
