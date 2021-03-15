@@ -33,6 +33,7 @@ code {
 .appIcon{
   border-radius: 1em;
   width: 7em;
+  height: 7em;
   border-style: solid;
 }
 .appIcon:hover{

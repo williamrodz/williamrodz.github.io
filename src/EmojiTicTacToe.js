@@ -11,13 +11,13 @@ import Button from 'react-bootstrap/Button';
 const Photo = (props) =>{
     return (
         <div className="image-container ">
-            <img className="galleryPhoto" src={props.photoSource}/>
+            <img alt="Screenshot previewing one of app's views" className="galleryPhoto" src={props.photoSource}/>
         </div>
     )
 }
 
  const AppIcon = (props) =>{
-     return (<img className="appIcon" src={appIcon}/>)
+     return (<img alt="app icon"className="appIcon" src={appIcon}/>)
  }
 
 
