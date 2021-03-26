@@ -1,3 +1,7 @@
+#root{
+  display: flex;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,86 +16,87 @@ code {
     monospace;
 }
 
-.tictactoeContainer{
-  padding: 1em;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #34495e;
-  color: white;
-}
-.tagLine{
-  margin-top: 2em;
-  font-style: italic;
-}
-.appDescriptionRow{
-  justify-content: center;
-  margin:2em;
-  vertical-align: middle;
+canvas{
+  /* border: 1.5px solid black; */
+  background-color: white;
+  display: block;
+  z-index: -1;
 }
 
-.appIcon{
-  border-radius: 1em;
-  width: 7em;
-  height: 7em;
-  border-style: solid;
-}
-.appIcon:hover{
-  background-color: #2c3e50;
+.wrapper{
+position: absolute;
+top: 0px;
+color: black;
+font-size: 14px;
+z-index: 1;
+height: 100%;
+width: 100%;
+text-align: center;
 }
 
-.appTitle{
+.header-title{
+font-size: 3em;
+margin-top: 1em;
+}
+
+.description{
+  font-size: 1.25em;
+  }
+
+
+.header-content{
   font-size: 2em;
+}
+
+.projects-and-research{
+  height: 15em;
+  overflow-y: scroll;
+}
+
+.list-item{
+  margin-top: 0.5em;
+}
+
+.profile-section-header{
+  cursor:pointer;
   display: flex;
-  flex-direction: column;
-  margin: 0.25em;
-  justify-content: center;
-
+  flex-direction:column;
+  text-align:center;  
 }
 
-.gallery{
-  width: 80%;
-  overflow-x: auto;
-  overflow-y: hidden; 
+
+.contact-icons-row{
+padding-top: 0px;
+
+}
+.icon-image{
+padding-right: 25px;
 }
 
-.galleryPhoto{
-  width:10em;
-  margin-left: 2em;
-  border-radius: 1em;
+.icon-image:hover{
+  opacity: 70%;
 }
 
-.descriptionBody{
-  margin-top: 2em;
-  text-align: justify;
+.navbar.transparent.navbar-inverse .navbar-inner {
+border-width: 0px;
+-webkit-box-shadow: 0px 0px;
+box-shadow: 0px 0px;
+background-color: rgba(0,0,0,0.0);
+background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+.collapse-css-transition {
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
-.descriptionTitle{
-  font-size: 1em;
-  margin-top: 1em;
-  font-weight: bold;
-} 
+.socialMediaBar{
+  display:flex;
+  bottom:1em;
+  align-content:center;
+  width:fit-content;
+  position:relative;
+  top:1em;
 
-.flexRow{
-  display: flex;
-  flex-direction: row;
-}
-
-.flexColumn{
-  display: flex;
-  flex-direction: column;  
-}
-
-.supportRow{
-  margin-top:1em;
-  flex-direction: column;
-}
-
-.copyrightRow{
-  font-size: 0.7em;
-  padding: 1em;
-}
-
-.privacyPolicy{
-  padding: 1em;
 }

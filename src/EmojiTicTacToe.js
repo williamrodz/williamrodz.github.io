@@ -8,6 +8,8 @@ import Unicorn from './tictactoe/Unicorn.png';
 import appIcon from './tictactoe/icon.png'
 import Button from 'react-bootstrap/Button';
 
+import './tictactoe.css'
+
 const Photo = (props) =>{
     return (
         <div className="image-container ">
