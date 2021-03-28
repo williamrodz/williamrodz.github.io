@@ -84,7 +84,7 @@ const EmojiTacToe = (props) =>{
     let photos = [AIselection,ChooseEmojis,DarkMode,DarkModeAI,HomeScreen,Unicorn]
     return(
         <div className="tictactoeContainer flexColumn">
-            <div className="flexRow appDescriptionRow">
+            <div className="flexRow appDescriptionRow" onClick= {() => window.open( "https://apps.apple.com/us/app/emoji-tic-tac-toe/id1558300785")}>
                 <AppIcon/>
                 <div className="appTitle">Emoji Tic Tac Toe!</div>
             </div>

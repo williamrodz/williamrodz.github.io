@@ -10,15 +10,15 @@ import {
 
 const Header = (props)=>{
   return(
-    <>
-    <div className="header-title colorchanging-item">
-    <div>William A. </div>
-    <div>Rodríguez</div>
-  </div>
-  <div className="description">
-    I am passionate about improvig people's lives through tech and other means, accelerating the transition to clean energy, and learning about the world and its people.
+    <div className="header-container fade-in-item-first">
+      <div className="header-title colorchanging-item">
+      <div>William A. </div>
+      <div>Rodríguez</div>
+    </div>
+    <div className="description">
+      I am passionate about improving people's lives through tech and other means, accelerating the transition to clean energy, and learning about the world and its people.
+    </div>  
   </div>  
-  </>  
   )
 }
 
@@ -64,6 +64,9 @@ const ProjectsResearch = () =>
       <a href="https://covidtrackerpr.com">COVID-19 in Puerto Rico</a> React Web+iOS+Android app with Firebase backend for showing statistics of spread of COVID-19 in Puerto Rico <span role="img" aria-label="Virus">🦠</span>
     </div>
     <div className="list-item">
+      <a href="https://apps.apple.com/us/app/emoji-tic-tac-toe/id1558300785">Emoji Tic Tac Toe!</a> Published a classic game on the Apple App Store <span role="img" aria-label="Blue hat">📱</span>
+    </div>    
+    <div className="list-item">
       <a href="https://github.com/dkout/power_to_the_blind">Power to the Blind:</a> Raspberry Pi-enabled hat that identifies people in camera range and reads location through earphones <span role="img" aria-label="Blue hat">🧢</span>
     </div>
     <div className="list-item">
@@ -89,7 +92,7 @@ const ProjectsResearch = () =>
 </div>)
 
 const ProgrammingSkills = () =>(
-   <div className="">
+   <div className="programming-skills-content">
         <div>
           <div className="list-item">Python <span role="img" aria-label="Snake">🐍</span></div>
           <div className="list-item">React Native <span role="img" aria-label="Radioactive">☢️</span></div>
@@ -115,7 +118,7 @@ const Languages = ()=>
   )
 
 const SocialMedia = (props)=>(
-  <div className="socialMediaBar">
+  <div className="social-media-bar">
       <a href="https://instagram.com/williamrodz">
         <img className="icon-image" src="img/iconmonstr-instagram-11-24.png" alt="instagram logo"/>
       </a>
@@ -130,7 +133,7 @@ const SocialMedia = (props)=>(
 
   const Email = (props) =>{
     return(
-      <div>william *dot* a *at* alum *dot* mit *dot* edu</div>
+      <div>william *dot* a @ alum *dot* mit *dot* edu</div>
     )
   }
 
@@ -145,7 +148,7 @@ function App() {
   const SiteSection = (props)=>{
     return(
     <div className={selectedSection === props.sectionName ? 'profile-section-header appearing-item' : 'profile-section-header'} >
-      <div className="header-content" onClick={()=>{
+      <div className="section-title" onClick={()=>{
         if (selectedSection === props.sectionName){
           setSelectedSection(null)
           console.log("deactivating section") 
@@ -168,36 +171,37 @@ function App() {
     <canvas></canvas>
     <div className="wrapper">
       <Header />
-      <SiteSection 
-        title={<>education<span role="img" aria-label="Grad cap">🎓</span></>}
-        sectionName={'education'} 
-        content={<>
-          MIT Class of 2019 (MEng, Computer Science and Engineering, Concentration in Artificial Intelligence)
-          {<br/>}
-          MIT Class of 2018 (SB, Computer Science and Engineering, Minor in Economics)</>}      
-      />
-      <SiteSection 
-      title={<>professional experience<span role="img" aria-label="tie emoji">👔</span></>}
-      sectionName={'experience'}
-      content={<JobList/>}/>
-      <SiteSection 
-        title={<>projects & research<span role="img" aria-label="Telescope">🔭</span></>}
-        sectionName={'projects'}
-        content={<ProjectsResearch/>}/>
-      <SiteSection 
-        title={<>programming skills<span role="img" aria-label="Coder">👨🏻‍💻</span></>}
-        sectionName={'programming'}
-        content={<ProgrammingSkills/>}/>
-      <SiteSection 
-      title={<>languages<span role="img" aria-label="Globe">🌍</span></>}
-      sectionName={'languages'}
-      content={<Languages/>}/>
-      <SiteSection 
-        title={<>get in touch<span role="img" aria-label="Surfer">🏄‍♀️</span></>}
-        sectionName={'getintouch'}
-        content={<Email/>}/>
-      <SocialMedia />
-        
+      <div className="fade-in-item-second">
+        <SiteSection 
+          title={<>education<span role="img" aria-label="Grad cap">🎓</span></>}
+          sectionName={'education'} 
+          content={<>
+            MIT Class of 2019 (MEng, Computer Science and Engineering, Concentration in Artificial Intelligence)
+            {<br/>}
+            MIT Class of 2018 (SB, Computer Science and Engineering, Minor in Economics)</>}      
+        />
+        <SiteSection 
+        title={<>professional experience<span role="img" aria-label="tie emoji">👔</span></>}
+        sectionName={'experience'}
+        content={<JobList/>}/>
+        <SiteSection 
+          title={<>projects & research<span role="img" aria-label="Telescope">🔭</span></>}
+          sectionName={'projects'}
+          content={<ProjectsResearch/>}/>
+        <SiteSection 
+          title={<>programming skills<span role="img" aria-label="Coder">👨🏻‍💻</span></>}
+          sectionName={'programming'}
+          content={<ProgrammingSkills/>}/>
+        <SiteSection 
+        title={<>languages<span role="img" aria-label="Globe">🌍</span></>}
+        sectionName={'languages'}
+        content={<Languages/>}/>
+        <SiteSection 
+          title={<>get in touch<span role="img" aria-label="Surfer">🏄‍♀️</span></>}
+          sectionName={'getintouch'}
+          content={<Email/>}/>
+        <SocialMedia />
+      </div>
     </div>
     </>
        
