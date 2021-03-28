@@ -39,16 +39,16 @@ const JobList = (props) =>{
       <a href="https://www.tesla.com/energy">Tesla</a> (Summer '19 - Palo Alto, CA <span role="img" aria-label="san fancisco bridge">🌉</span>)
     </div>
     <div className="list-item">
-      <a href="iberdrola.com"> Iberdrola</a> (Summer '18 - Madrid, Spain <span role="img" aria-label="Spanish flag">🇪🇸</span>)
+      <a href="https://iberdrola.com"> Iberdrola</a> (Summer '18 - Madrid, Spain <span role="img" aria-label="Spanish flag">🇪🇸</span>)
     </div>
     <div className="list-item">
       MIT Global Teaching Labs in Entrepreneurship with<a href="https://www.babroad.com.br/copia-inicio"> B-Abroad</a> (Winter '18 - São Paulo, Brazil <span role="img" aria-label="Brazilian flag">🇧🇷</span>)
     </div>
     <div className="list-item">
-      <a href="morganstanley.com">Morgan Stanley</a> (Summer '17 - New York City, NY <span role="img" aria-label="Statue of Liberty">🗽</span>)
+      <a href="https://morganstanley.com">Morgan Stanley</a> (Summer '17 - New York City, NY <span role="img" aria-label="Statue of Liberty">🗽</span>)
     </div>
     <div className="list-item">
-      <a href="take.net">Take.NET</a> (Summer '16 - Belo Horizonte, Brazil <span role="img" aria-label="Brazilian flag">🇧🇷</span>)
+      <a href="https://take.net">Take.NET</a> (Summer '16 - Belo Horizonte, Brazil <span role="img" aria-label="Brazilian flag">🇧🇷</span>)
     </div>
     <div className="list-item">
       <a href="https://tala.co">Tala</a> (Winter '16 - Santa Monica, CA <span role="img" aria-label="Rollercoaster">🎢</span>)
