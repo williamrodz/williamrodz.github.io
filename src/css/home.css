@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+canvas{
+  /* border: 1.5px solid black; */
+  background-color: white;
+  display: block;
+  z-index: -1;
+}
+
+.wrapper{
+position: absolute;
+top: 0px;
+color: black;
+font-size: 14px;
+z-index: 1;
+height: 100%;
+width: 80%;
+text-align: center;
+}
+.header-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.header-title{
+font-size: 3em;
+margin-top: 1em;
+}
+
+
+.description{
+  padding:1em;
+  width: 80%;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.section-title{
+  font-size: 1.9em;
+}
+
+
+.projects-and-research{
+  height: 15em;
+  overflow-y: scroll;
+}
+.programming-skills-content{
+  font-family: Consolas;
+}
+
+.list-item{
+  margin-top: 0.5em;
+}
+
+.profile-section-header{
+  cursor:pointer;
+  display: flex;
+  flex-direction:column;
+  text-align:center;  
+}
+
+.icon-image{
+  margin: 1em;
+}
+
+.icon-image:hover{
+  opacity: 50%;
+}
+
+
+
+.fade-in-item-first {
+  animation: 2s linear 0s forwards fadeIn;
+  -webkit-animation:  2s linear 0s forwards fadeIn;
+}
+
+.fade-in-item-second {
+  animation: 2s linear 0s forwards fadeIn;
+  -webkit-animation:  2s linear 0s forwards fadeIn;
+
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(3em);
+    opacity: 0%;
+  }
+
+  40%{
+    opacity: 0%;
+  }
+
+  to {
+    transform: translateY(0em);
+    opacity: 100%;
+  }
+}
+
+
+.appearing-item {
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+.disappearing-item {
+  animation-duration: 0.5s;
+  animation-name: slideout;
+}
+
+@keyframes slidein {
+  from {
+    font-size: 50%;
+  }
+
+  75% {
+    font-size: 110%;
+  }
+
+  to {
+    font-size: 100%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    font-size: 100%;
+  }
+
+  to {
+    font-size: 0%;
+  }
+}
+
+.colorchanging-item {
+  animation-duration: 10s;
+  animation-name: colorchanging;
+}
+
+@keyframes colorchanging {
+  from {
+    color: black;
+  }
+
+  40% {
+    color: orange
+  }
+
+  60% {
+    color: blue
+  }
+
+  80% {
+    color: green
+  }
+
+}

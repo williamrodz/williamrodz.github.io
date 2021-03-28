@@ -7,6 +7,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import './css/home.css';
+
+
 
 const Header = (props)=>{
   return(
@@ -70,7 +73,7 @@ const ProjectsResearch = () =>
       <a href="https://github.com/dkout/power_to_the_blind">Power to the Blind:</a> Raspberry Pi-enabled hat that identifies people in camera range and reads location through earphones <span role="img" aria-label="Blue hat">🧢</span>
     </div>
     <div className="list-item">
-    <a href="docs/Abstract_Please_email_for_full_copy.pdf">
+    <a href="docs/eee2020-paper-rodriguezjimenez-william-8-10-rodriguez-jimenez-william.pdf">
     Master's Thesis: Understanding EV Owners’ Preferences Towards Enrolling in Smart Charging Programs<span role="img" aria-label="Electric car">🚗⚡️</span></a>
     </div>
     <div className="list-item">
