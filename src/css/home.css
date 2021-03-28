@@ -93,8 +93,9 @@ margin-top: 1em;
 }
 
 .fade-in-item-second {
-  animation: 10s linear 0s forwards fadeIn;
-  -webkit-animation:  2s linear 0s forwards fadeIn;
+  opacity: 0;
+  animation: 10s linear 7s forwards fadeIn;
+  -webkit-animation:  2s linear 7s forwards fadeIn;
 
 }
 
