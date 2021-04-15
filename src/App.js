@@ -19,7 +19,7 @@ const Header = (props)=>{
       <div>Rodríguez</div>
     </div>
     <div className="description">
-      I am passionate about improving people's lives through tech and other means, accelerating the transition to clean energy, and learning about the world and its people.
+      I am passionate about improving people's lives through science, tech, and other means, accelerating the transition to clean energy, and learning about the world and its people.
     </div>  
   </div>  
   )
