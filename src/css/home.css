@@ -88,13 +88,13 @@ margin-top: 1em;
 
 
 .fade-in-item-first {
-  animation: 2s linear 0s forwards fadeIn;
+  animation: 0.5s linear 0s forwards fadeIn;
   -webkit-animation:  2s linear 0s forwards fadeIn;
 }
 
 .fade-in-item-second {
   opacity: 0;
-  animation: 10s linear 3s forwards fadeIn;
+  animation: 10s linear 1s forwards fadeIn;
   -webkit-animation:  2s linear 3s forwards fadeIn;
 
 }
