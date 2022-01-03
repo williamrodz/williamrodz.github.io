@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import './css/home.css';
 
+import { Icon } from '@iconify/react';
 
 
 const Header = (props)=>{
@@ -19,7 +20,7 @@ const Header = (props)=>{
       <div>Rodríguez</div>
     </div>
     <div className="description">
-      I am passionate about improving people's lives through science, tech, and other means, accelerating the transition to clean energy, and learning about the world and its people.
+      I enjoy improving people's lives through science and technology. I am excited about clean energy and learning about the world.
     </div>  
   </div>  
   )
@@ -108,8 +109,18 @@ const ProgrammingSkills = () =>(
         </div>
       </div>)
 
+const GetInTouch = () =>{
+  return (
+    <div className='get-in-touch-page'>
+        <div className='get-in-touch-header'>Get in touch 🏄🏻‍♂️</div>
+        <SocialMedia />
+        <Email/>  
+    </div>
+  )
+}
+
 const Languages = ()=>
-  (<div class="">
+  (<div>
           <div style={{listStyleType: 'none'}}>
             <div className="list-item">English<span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
             <div className="list-item">Spanish<span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
@@ -120,25 +131,31 @@ const Languages = ()=>
         </div>
   )
 
+let SOCIAL_MEDIA_ICON_SIZE = 100
 const SocialMedia = (props)=>(
   <div className="social-media-bar">
-      <a href="https://instagram.com/williamrodz">
-        <img className="icon-image" src="img/iconmonstr-instagram-11-24.png" alt="instagram logo"/>
+      <a className="social-media-icon" href="https://instagram.com/williamrodz">
+        <Icon icon="akar-icons:instagram-fill" color="white" width={SOCIAL_MEDIA_ICON_SIZE} />
       </a>
-      <a href="https://linkedin.com/in/williamarodriguez">
-        <img className="icon-image" src="img/iconmonstr-linkedin-3-24.png" alt="linkedin logo"/>
+      <a className="social-media-icon" href="https://linkedin.com/in/williamarodriguez">
+        <Icon icon="akar-icons:linkedin-fill" color="white" width={SOCIAL_MEDIA_ICON_SIZE}/>
       </a>
-      <a href="https://github.com/williamrodz">
-        <img className="icon-image" src="img/iconmonstr-github-1-24.png" alt="github logo"/>
+      <a className="social-media-icon" href="https://github.com/williamrodz">
+        <Icon icon="akar-icons:github-fill" color="white" width={SOCIAL_MEDIA_ICON_SIZE} />
       </a>      
     </div>
   )
 
   const Email = (props) =>{
     return(
-      <div>william *dot* a @ alum *dot* mit *dot* edu</div>
+      <div className='email-text'>william.a @ alum.mit.edu</div>
     )
   }
+
+  function createOptionObject(displayText,sectionName){
+    return {displayText:displayText,sectionName:sectionName}
+  }
+
 
 
 function App() {
@@ -147,6 +164,72 @@ function App() {
   
   const [selectedSection,setSelectedSection] = useState(null)
 
+  let SECTION_NAME_EDUCATION = "SECTION_NAME_EDUCATION"
+  let SECTION_NAME_JOBS = "SECTION_NAME_JOBS"
+
+  let SECTION_NAME_PROJECTS = "SECTION_NAME_PROJECTS"
+  let SECTION_NAME_PROGRAMMING = "SECTION_NAME_PROGRAMMING"
+  let SECTION_NAME_LANGUAGES = "SECTION_NAME_LANGUAGES"
+  let SECTION_NAME_GET_IN_TOUCH = "SECTION_NAME_GET_IN_TOUCH"
+
+
+  const MenuOption = (props) =>{
+
+    return (
+      <div className='section-icon' onClick={()=>setSelectedSection(props.sectionName)}>
+        {props.displayText}
+      </div>
+    )
+  }
+
+  const SectionSelector = (props) =>{
+    let options = [
+      ["🎓",SECTION_NAME_EDUCATION],
+      ["👔",SECTION_NAME_JOBS],
+    ["🔭",SECTION_NAME_PROJECTS],
+    ["👨🏻‍💻",SECTION_NAME_PROGRAMMING],
+    ["🌏",SECTION_NAME_LANGUAGES],
+    ]
+    var optionObjects = []
+    options.forEach(option=>{
+      optionObjects.push(createOptionObject(option[0],option[1])) 
+    })
+
+    var menuOptions = []
+    optionObjects.forEach(optionObject=>{
+      menuOptions.push(<MenuOption key={optionObject.sectionName} sectionName={optionObject.sectionName} displayText={optionObject.displayText}/>)
+    })
+
+
+    return(
+      <div className='section-selector'>
+        {
+          menuOptions
+        }
+
+      </div>
+    )
+  }
+
+  const EducationSection = () =>{
+    return (
+      <>
+        MIT Master of Engineering '19{<br/>}
+        Computer Science and Engineering, Concentration in Artificial Intelligence){<br/>}{<br/>}
+        MIT Bachelor of Science '18{<br/>}
+        Computer Science and Engineering, Minor in Economics)
+        </>      
+    )
+  }
+
+  let sectionNamesToContent = {
+      null:<></>,
+    [SECTION_NAME_EDUCATION]:<EducationSection/>,
+    [SECTION_NAME_JOBS]:<JobList/>,
+    [SECTION_NAME_PROGRAMMING]:<ProgrammingSkills/>,
+    [SECTION_NAME_PROJECTS]:<ProjectsResearch/>,
+    [SECTION_NAME_LANGUAGES]:<Languages/>
+  }
 
   const SiteSection = (props)=>{
     return(
@@ -175,37 +258,14 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="fade-in-item-second">
-        <SiteSection 
-          title={<>education<span role="img" aria-label="Grad cap">🎓</span></>}
-          sectionName={'education'} 
-          content={<>
-            MIT Class of 2019 (MEng, Computer Science and Engineering, Concentration in Artificial Intelligence)
-            {<br/>}
-            MIT Class of 2018 (SB, Computer Science and Engineering, Minor in Economics)</>}      
-        />
-        <SiteSection 
-        title={<>professional experience<span role="img" aria-label="tie emoji">👔</span></>}
-        sectionName={'experience'}
-        content={<JobList/>}/>
-        <SiteSection 
-          title={<>projects & research<span role="img" aria-label="Telescope">🔭</span></>}
-          sectionName={'projects'}
-          content={<ProjectsResearch/>}/>
-        <SiteSection 
-          title={<>programming skills<span role="img" aria-label="Coder">👨🏻‍💻</span></>}
-          sectionName={'programming'}
-          content={<ProgrammingSkills/>}/>
-        <SiteSection 
-        title={<>languages<span role="img" aria-label="Globe">🌍</span></>}
-        sectionName={'languages'}
-        content={<Languages/>}/>
-        <SiteSection 
-          title={<>get in touch<span role="img" aria-label="Surfer">🏄‍♀️</span></>}
-          sectionName={'getintouch'}
-          content={<Email/>}/>
-        <SocialMedia />
+        <SectionSelector/>
+        {
+          sectionNamesToContent[selectedSection]
+        }
       </div>
     </div>
+    <GetInTouch/>
+
     </>
        
   );
