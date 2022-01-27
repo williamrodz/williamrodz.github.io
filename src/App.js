@@ -8,9 +8,15 @@ import {
   Route,
 } from "react-router-dom";
 import './css/home.css';
-
 import { Icon } from '@iconify/react';
 
+let SECTION_NAME_EDUCATION = "SECTION_NAME_EDUCATION"
+let SECTION_NAME_JOBS = "SECTION_NAME_JOBS"
+
+let SECTION_NAME_PROJECTS = "SECTION_NAME_PROJECTS"
+let SECTION_NAME_PROGRAMMING = "SECTION_NAME_PROGRAMMING"
+let SECTION_NAME_LANGUAGES = "SECTION_NAME_LANGUAGES"
+let SECTION_NAME_GET_IN_TOUCH = "SECTION_NAME_GET_IN_TOUCH"
 
 const Header = (props)=>{
   return(
@@ -23,6 +29,37 @@ const Header = (props)=>{
       I enjoy improving people's lives through science and technology. I am excited about clean energy and learning about the world.
     </div>  
   </div>  
+  )
+}
+
+
+const SectionSelector = (props) =>{
+  let options = [
+    ["🎓",SECTION_NAME_EDUCATION],
+    ["👔",SECTION_NAME_JOBS],
+  ["🔭",SECTION_NAME_PROJECTS],
+  ["👨🏻‍💻",SECTION_NAME_PROGRAMMING],
+  ["🌏",SECTION_NAME_LANGUAGES],
+  ["📝 ",SECTION_NAME_GET_IN_TOUCH]
+  ]
+  var optionObjects = []
+  options.forEach(option=>{
+    optionObjects.push(createOptionObject(option[0],option[1])) 
+  })
+
+  var menuOptions = []
+  optionObjects.forEach(optionObject=>{
+    menuOptions.push(<MenuOption onChangeSection={props.sectionChangeCallback} key={optionObject.sectionName} sectionName={optionObject.sectionName} displayText={optionObject.displayText}/>)
+  })
+
+
+  return(
+    <div className='section-selector'>
+      {
+        menuOptions
+      }
+
+    </div>
   )
 }
 
@@ -111,8 +148,8 @@ const ProgrammingSkills = () =>(
 
 const GetInTouch = () =>{
   return (
-    <div className='get-in-touch-page'>
-        <div className='get-in-touch-header'>Get in touch 🏄🏻‍♂️</div>
+    <div id="get-in-touch" className='get-in-touch-page'>
+        <div className='get-in-touch-header'>Get in touch <span role="img" aria-label="person ridingsurfboard"> 🏄🏻‍♂️</span></div>
         <SocialMedia />
         <Email/>  
     </div>
@@ -122,11 +159,11 @@ const GetInTouch = () =>{
 const Languages = ()=>
   (<div>
           <div style={{listStyleType: 'none'}}>
-            <div className="list-item">English<span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
-            <div className="list-item">Spanish<span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
-<div className="list-item">Portuguese<span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
-            <div className="list-item">French<span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs in high school + 1 in college)</div>
-            <div className="list-item">Japanese<span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese </div>
+            <div className="list-item"><strong>English</strong><span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
+            <div className="list-item"><strong>Spanish</strong><span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
+<div className="list-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
+            <div className="list-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs in high school + 1 in college)</div>
+            <div className="list-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese </div>
           </div>
         </div>
   )
@@ -157,6 +194,27 @@ const SocialMedia = (props)=>(
   }
 
 
+  const MenuOption = (props) =>{
+
+    if (props.sectionName === SECTION_NAME_GET_IN_TOUCH){
+
+      return (
+        <a className='section-icon' href="#get-in-touch">
+          {props.displayText}
+        </a>
+      )
+      
+    }
+
+    else {
+      return (
+        <div className='section-icon' onClick={()=>props.onChangeSection(props.sectionName)}>
+          {props.displayText}
+        </div>
+      )
+    }
+
+  }
 
 function App() {
   ReactGA.initialize('UA-110490349-2');
@@ -164,59 +222,13 @@ function App() {
   
   const [selectedSection,setSelectedSection] = useState(null)
 
-  let SECTION_NAME_EDUCATION = "SECTION_NAME_EDUCATION"
-  let SECTION_NAME_JOBS = "SECTION_NAME_JOBS"
-
-  let SECTION_NAME_PROJECTS = "SECTION_NAME_PROJECTS"
-  let SECTION_NAME_PROGRAMMING = "SECTION_NAME_PROGRAMMING"
-  let SECTION_NAME_LANGUAGES = "SECTION_NAME_LANGUAGES"
-  let SECTION_NAME_GET_IN_TOUCH = "SECTION_NAME_GET_IN_TOUCH"
-
-
-  const MenuOption = (props) =>{
-
-    return (
-      <div className='section-icon' onClick={()=>setSelectedSection(props.sectionName)}>
-        {props.displayText}
-      </div>
-    )
-  }
-
-  const SectionSelector = (props) =>{
-    let options = [
-      ["🎓",SECTION_NAME_EDUCATION],
-      ["👔",SECTION_NAME_JOBS],
-    ["🔭",SECTION_NAME_PROJECTS],
-    ["👨🏻‍💻",SECTION_NAME_PROGRAMMING],
-    ["🌏",SECTION_NAME_LANGUAGES],
-    ]
-    var optionObjects = []
-    options.forEach(option=>{
-      optionObjects.push(createOptionObject(option[0],option[1])) 
-    })
-
-    var menuOptions = []
-    optionObjects.forEach(optionObject=>{
-      menuOptions.push(<MenuOption key={optionObject.sectionName} sectionName={optionObject.sectionName} displayText={optionObject.displayText}/>)
-    })
-
-
-    return(
-      <div className='section-selector'>
-        {
-          menuOptions
-        }
-
-      </div>
-    )
-  }
 
   const EducationSection = () =>{
     return (
       <>
-        MIT Master of Engineering '19{<br/>}
+        <strong>MIT Master of Engineering '19</strong>{<br/>}
         Computer Science and Engineering, Concentration in Artificial Intelligence){<br/>}{<br/>}
-        MIT Bachelor of Science '18{<br/>}
+        <strong>MIT Bachelor of Science '18</strong>{<br/>}
         Computer Science and Engineering, Minor in Economics)
         </>      
     )
@@ -231,26 +243,7 @@ function App() {
     [SECTION_NAME_LANGUAGES]:<Languages/>
   }
 
-  const SiteSection = (props)=>{
-    return(
-    <div className={selectedSection === props.sectionName ? 'profile-section-header appearing-item' : 'profile-section-header'} >
-      <div className="section-title" onClick={()=>{
-        if (selectedSection === props.sectionName){
-          setSelectedSection(null)
-          console.log("deactivating section") 
-        } else{
-          setSelectedSection(props.sectionName) 
-          console.log("activating section")       
-      }}}>
-        {props.title}
-      </div>
-      {props.sectionName === selectedSection ?
-        <div className={props.sectionName === selectedSection ? '' : 'disappearing-item'}>
-          {props.content}
-        </div> :<div></div>}       
-    </div> 
-    )
-  }  
+
 
   return (
     <>
@@ -258,7 +251,7 @@ function App() {
     <div className="wrapper">
       <Header />
       <div className="fade-in-item-second">
-        <SectionSelector/>
+        <SectionSelector sectionChangeCallback={setSelectedSection}/>
         {
           sectionNamesToContent[selectedSection]
         }

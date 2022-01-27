@@ -80,7 +80,7 @@ margin-top: 1em;
 
 .section-icon{
   cursor: pointer;
-  font-size: 60px;
+  font-size: 13vw;
   margin:5px;
 }
 
@@ -115,6 +115,7 @@ margin-top: 1em;
 }
 .programming-skills-content{
   font-family: Consolas;
+  font-size: 1.3em;
 }
 
 .list-item{
