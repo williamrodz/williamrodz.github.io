@@ -1,6 +1,9 @@
 :root{
   --text-color:white
 }
+html, body{
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -80,7 +83,7 @@ margin-top: 1em;
 
 .section-icon{
   cursor: pointer;
-  font-size: 13vw;
+  font-size: 9vw;
   margin:5px;
 }
 
