@@ -133,17 +133,15 @@ const ProjectsResearch = () =>
 </div>)
 
 const ProgrammingSkills = () =>(
-   <div className="programming-skills-content">
-        <div>
-          <div className="list-item">Python <span role="img" aria-label="Snake">🐍</span></div>
-          <div className="list-item">React Native <span role="img" aria-label="Radioactive">☢️</span></div>
-          <div className="list-item">React Js<span role="img" aria-label="Radioactive">☢️</span></div>
-          <div className="list-item">HTML/CSS/JS <span role="img" aria-label="Spiderweb">🕸</span></div>
-          <div className="list-item">Java <span role="img" aria-label="Coffee">☕️</span></div>
-          <div className="list-item">iOS Swift<span role="img" aria-label="Apple">🍏</span></div>
-          <div className="list-item">R <span role="img" aria-label="Increasing chart">📈</span></div>
-          <div className="list-item">SQL <span role="img" aria-label="Barrel">🛢</span></div>
-        </div>
+   <div className="section-coding">
+          <div className="list-item programming-language">Python <span role="img" aria-label="Snake">🐍</span></div>
+          <div className="list-item programming-language">React Native <span role="img" aria-label="Radioactive">☢️</span></div>
+          <div className="list-item programming-language">React Js<span role="img" aria-label="Radioactive">☢️</span></div>
+          <div className="list-item programming-language">HTML/CSS/JS <span role="img" aria-label="Spiderweb">🕸</span></div>
+          <div className="list-item programming-language">Java <span role="img" aria-label="Coffee">☕️</span></div>
+          <div className="list-item programming-language">iOS Swift<span role="img" aria-label="Apple">🍏</span></div>
+          <div className="list-item programming-language">R <span role="img" aria-label="Increasing chart">📈</span></div>
+          <div className="list-item programming-language">SQL <span role="img" aria-label="Barrel">🛢</span></div>
       </div>)
 
 const GetInTouch = () =>{
@@ -157,30 +155,34 @@ const GetInTouch = () =>{
 }
 
 const Languages = ()=>
-  (<div>
-          <div style={{listStyleType: 'none'}}>
-            <div className="list-item"><strong>English</strong><span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
-            <div className="list-item"><strong>Spanish</strong><span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
-<div className="list-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
-            <div className="list-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs in high school + 1 in college)</div>
-            <div className="list-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese </div>
-          </div>
-        </div>
+  (<div className='section-languages' style={{listStyleType: 'none'}}>
+            <div className="list-item language-item"><strong>English</strong><span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
+            <div className="list-item language-item"><strong>Spanish</strong><span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
+            <div className="list-item language-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
+            <div className="list-item language-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs in high school + 1 in college)</div>
+            <div className="list-item language-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese </div>
+    </div>
   )
 
 let SOCIAL_MEDIA_ICON_SIZE = 100
+
+
+const SocialMediaIcon = (props) => {
+
+  const [color,setColor] = useState('white')
+  return (
+    <a className="social-media-icon" onMouseOver={()=>setColor(props.hoverColor ? props.hoverColor :'orange')} onMouseLeave={()=>setColor('white')} href={props.href}>
+    <Icon icon={props.icon} color={color} width={SOCIAL_MEDIA_ICON_SIZE} />
+  </a>    
+  )
+}
+
 const SocialMedia = (props)=>(
   <div className="social-media-bar">
-      <a className="social-media-icon" href="https://instagram.com/williamrodz">
-        <Icon icon="akar-icons:instagram-fill" color="white" width={SOCIAL_MEDIA_ICON_SIZE} />
-      </a>
-      <a className="social-media-icon" href="https://linkedin.com/in/williamarodriguez">
-        <Icon icon="akar-icons:linkedin-fill" color="white" width={SOCIAL_MEDIA_ICON_SIZE}/>
-      </a>
-      <a className="social-media-icon" href="https://github.com/williamrodz">
-        <Icon icon="akar-icons:github-fill" color="white" width={SOCIAL_MEDIA_ICON_SIZE} />
-      </a>      
-    </div>
+      <SocialMediaIcon icon="akar-icons:instagram-fill" href="https://instagram.com/williamrodz" hoverColor="#e67e22" />
+      <SocialMediaIcon icon="akar-icons:linkedin-fill" href="https://linkedin.com/in/williamarodriguez" hoverColor="rgb(10, 102, 194)"/>
+      <SocialMediaIcon icon="akar-icons:github-fill" href="https://github.com/williamrodz" hoverColor="rgb(104,18,111)"/>
+  </div>
   )
 
   const Email = (props) =>{
@@ -225,12 +227,12 @@ function App() {
 
   const EducationSection = () =>{
     return (
-      <>
+      <div className='section-education'>
         <strong>MIT Master of Engineering '19</strong>{<br/>}
         Computer Science and Engineering, Concentration in Artificial Intelligence){<br/>}{<br/>}
         <strong>MIT Bachelor of Science '18</strong>{<br/>}
         Computer Science and Engineering, Minor in Economics)
-        </>      
+        </div>      
     )
   }
 

@@ -111,14 +111,53 @@ margin-top: 1em;
   font-size: 1.9em;
 }
 
+.section-education{
+  font-size: 1.4em;
+}
+
 
 .projects-and-research{
   height: 20em;
   overflow-y: scroll;
 }
-.programming-skills-content{
+.section-coding{
   font-family: Consolas;
   font-size: 1.3em;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.programming-language{
+  background-color: blue;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  width: fit-content;
+  text-align: center;
+  align-self: center;
+ 
+}
+
+
+.section-languages{
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  
+}
+
+
+.language-item{
+  background-color: #34495e;
+  color: white;
+  width: fit-content;
+  padding: 0.3em;
+  border-radius: 0.2em;
 }
 
 .list-item{
