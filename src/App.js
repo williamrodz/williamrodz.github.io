@@ -40,7 +40,7 @@ const SectionSelector = (props) =>{
   ["🔭",SECTION_NAME_PROJECTS],
   ["👨🏻‍💻",SECTION_NAME_PROGRAMMING],
   ["🌏",SECTION_NAME_LANGUAGES],
-  ["📝 ",SECTION_NAME_GET_IN_TOUCH]
+  ["✉️",SECTION_NAME_GET_IN_TOUCH]
   ]
   var optionObjects = []
   options.forEach(option=>{
@@ -177,6 +177,14 @@ const SocialMediaIcon = (props) => {
   )
 }
 
+const BigArrowDown = (props) =>{
+  return(
+    <div style={{fontSize:'20vw'}}>
+      ⬇️
+    </div>
+  )
+}
+
 const SocialMedia = (props)=>(
   <div className="social-media-bar">
       <SocialMediaIcon icon="akar-icons:instagram-fill" href="https://instagram.com/williamrodz" hoverColor="#e67e22" />
@@ -199,9 +207,8 @@ const SocialMedia = (props)=>(
   const MenuOption = (props) =>{
 
     if (props.sectionName === SECTION_NAME_GET_IN_TOUCH){
-
       return (
-        <a className='section-icon' href="#get-in-touch">
+        <a className='section-icon' href="#get-in-touch" onMouseUp={() => props.onChangeSection(SECTION_NAME_GET_IN_TOUCH)}>
           {props.displayText}
         </a>
       )
@@ -229,9 +236,9 @@ function App() {
     return (
       <div className='section-education'>
         <strong>MIT Master of Engineering '19</strong>{<br/>}
-        Computer Science and Engineering, Concentration in Artificial Intelligence){<br/>}{<br/>}
+        Computer Science and Engineering, Concentration in Artificial Intelligence{<br/>}{<br/>}
         <strong>MIT Bachelor of Science '18</strong>{<br/>}
-        Computer Science and Engineering, Minor in Economics)
+        Computer Science and Engineering, Minor in Economics
         </div>      
     )
   }
@@ -242,7 +249,8 @@ function App() {
     [SECTION_NAME_JOBS]:<JobList/>,
     [SECTION_NAME_PROGRAMMING]:<ProgrammingSkills/>,
     [SECTION_NAME_PROJECTS]:<ProjectsResearch/>,
-    [SECTION_NAME_LANGUAGES]:<Languages/>
+    [SECTION_NAME_LANGUAGES]:<Languages/>,
+    [SECTION_NAME_GET_IN_TOUCH]:<BigArrowDown/>
   }
 
 
