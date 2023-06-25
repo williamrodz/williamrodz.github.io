@@ -7,21 +7,9 @@ html, body{
 
 body {
   margin: 0;
-  font-family: 'San Francisco', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Helvetica Neue';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@font-face {
-  font-family: 'San Francisco';
-  font-style: normal;
-  font-weight: 400;
-  src: local('San Francisco'),
-       url('../fonts/SanFrancisco/SFUIText/SFUIText-Regular.otf') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/SanFrancisco/woff/san_francisco-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/SanFrancisco/woff/san_francisco-webfont.woff') format('woff'), /* Modern Browsers */
 }
 
 #root{
@@ -188,9 +176,8 @@ margin-top: 1em;
 
 .fade-in-item-second {
   opacity: 0;
-  animation: 10s linear 1s forwards fadeIn;
+  animation: 0.5s linear 1s forwards fadeIn;
   -webkit-animation:  2s linear 3s forwards fadeIn;
-
 }
 
 @keyframes fadeIn {

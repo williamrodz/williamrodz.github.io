@@ -23,7 +23,7 @@ const Header = (props)=>{
     <div className="header-container fade-in-item-first">
       <div className="header-title colorchanging-item">
       <div>William A. </div>
-      <div>Rodríguez</div>
+      <div>Rodríguez Jiménez</div>
     </div>
     <div className="description">
       I enjoy improving people's lives through science and technology. I am excited about clean energy and learning about the world.
@@ -180,7 +180,7 @@ const SocialMediaIcon = (props) => {
 const BigArrowDown = (props) =>{
   return(
     <div style={{fontSize:'20vw'}}>
-      ⬇️
+      <span role="img" aria-label='arrow facing down'>⬇️</span>
     </div>
   )
 }
