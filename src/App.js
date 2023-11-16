@@ -4,8 +4,8 @@ import TicTacToe from './EmojiTicTacToe';
 import TicTacToePrivacy from './AppPrivacyPolicy';
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
+  Routes,
 } from "react-router-dom";
 import './css/home.css';
 import { Icon } from '@iconify/react';
@@ -279,19 +279,13 @@ function App() {
 const AppWithRouter = (props) =>{
   return (
     <Router>
-        <Switch>
-          <Route path="/tictactoeprivacy">
-            <TicTacToePrivacy />
-          </Route>          
-          <Route path="/tictactoe">
-            <TicTacToe />
-          </Route>
-          <Route path="/">
-            <App />
-          </Route>
-        </Switch>
-
+      <Routes>
+            <Route path='/tictactoeprivacy' element={<TicTacToePrivacy/>}/>
+            <Route path='/tictactoe' element={<TicTacToe/>}/>
+            <Route path='/' element={<App/>}/>
+      </Routes>
     </Router>
+
   )
 
 }
