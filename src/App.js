@@ -67,7 +67,7 @@ const JobList = (props) =>{
     return(
     <div className="job-list">
     <div className="list-item">
-      <a href="https://www.apple.com">Apple</a> (Present - Cupertino, CA / remotely )
+      <a href="https://www.apple.com">Apple</a> (July '19 - September '23 - Cupertino, CA )
     </div>            
     <div className="list-item">
       <a href="https://www.un.org">United Nations</a> (Fall '19 - New York City, NY <span role="img" aria-label="UN logo">🇺🇳</span>)
@@ -235,6 +235,8 @@ function App() {
   const EducationSection = () =>{
     return (
       <div className='section-education'>
+        <strong>Oxford MSc Energy Systems '24</strong>{<br/>}
+        Currently studying how energy is generated and delivered along with topics in society, economics, and politics. {<br/>}
         <strong>MIT Master of Engineering '19</strong>{<br/>}
         Computer Science and Engineering, Concentration in Artificial Intelligence{<br/>}{<br/>}
         <strong>MIT Bachelor of Science '18</strong>{<br/>}
@@ -280,9 +282,9 @@ const AppWithRouter = (props) =>{
   return (
     <Router>
       <Routes>
-            <Route path='/tictactoeprivacy' element={<TicTacToePrivacy/>}/>
-            <Route path='/tictactoe' element={<TicTacToe/>}/>
-            <Route path='/' element={<App/>}/>
+        <Route path='/tictactoeprivacy' element={<TicTacToePrivacy/>}/>
+        <Route path='/tictactoe' element={<TicTacToe/>}/>
+        <Route path='/' element={<App/>}/>
       </Routes>
     </Router>
 
