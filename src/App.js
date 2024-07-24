@@ -159,8 +159,10 @@ const Languages = ()=>
             <div className="list-item language-item"><strong>English</strong><span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
             <div className="list-item language-item"><strong>Spanish</strong><span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
             <div className="list-item language-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
-            <div className="list-item language-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs in high school + 1 in college)</div>
-            <div className="list-item language-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese </div>
+            <div className="list-item language-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs of instruction)</div>
+            <div className="list-item language-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese</div>
+            <div className="list-item language-item"><strong>Arabic</strong><span role="letter" aria-label="Arabic letter qaf">ق</span>{<br/>}Took introductory Arabic course</div>
+
     </div>
   )
 
@@ -236,7 +238,7 @@ function App() {
     return (
       <div className='section-education'>
         <strong>Oxford MSc Energy Systems '24</strong>{<br/>}
-        Currently studying how energy is generated and delivered along with topics in society, economics, and politics. {<br/>}
+        Research in artificial intelligence to forecast time series energy data{<br/>}{<br/>}
         <strong>MIT Master of Engineering '19</strong>{<br/>}
         Computer Science and Engineering, Concentration in Artificial Intelligence{<br/>}{<br/>}
         <strong>MIT Bachelor of Science '18</strong>{<br/>}
