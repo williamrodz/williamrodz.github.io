@@ -161,8 +161,7 @@ const Languages = ()=>
             <div className="list-item language-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
             <div className="list-item language-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs of instruction)</div>
             <div className="list-item language-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese</div>
-            <div className="list-item language-item"><strong>Arabic</strong><span role="letter" aria-label="Arabic letter qaf">ق</span>{<br/>}Took introductory Arabic course</div>
-
+            <div className="list-item language-item"><strong>Arabic</strong><span role="letter" aria-label="Arabic letter dha">ض</span>{<br/>}Took introductory Arabic course</div>
     </div>
   )
 
