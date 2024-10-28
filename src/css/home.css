@@ -50,8 +50,19 @@ flex-direction: column;
   flex-direction: column;
 }
 .header-title{
-font-size: 3em;
-margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  font-size: 3em;
+  margin-top: 1em;
+  white-space: pre;
+
+}
+
+@media (max-width: 768px) {
+  .header-title{
+    font-size: 2em;
+    flex-direction: column;
+  }
 }
 
 
@@ -71,8 +82,15 @@ margin-top: 1em;
 
 .section-icon{
   cursor: pointer;
-  font-size: 9vw;
+  font-size: 4vw;
   margin:5px;
+}
+/* Mobile Width */
+@media (max-width: 768px) {
+  .section-icon{
+    font-size: 9vw;
+  }
+
 }
 
 .section-icon:hover{
@@ -105,7 +123,7 @@ margin-top: 1em;
 
 
 .projects-and-research{
-  height: 20em;
+  height: 50vh;
   overflow-y: scroll;
 }
 .section-coding{
@@ -253,7 +271,7 @@ margin-top: 1em;
 
 .job-list{
   font-weight: bold;
-  font-size: 14.5px;
+  font-size: 15.5px;
 }
 
 .get-in-touch-page{

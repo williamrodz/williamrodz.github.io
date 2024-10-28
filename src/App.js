@@ -26,7 +26,7 @@ const Header = (props)=>{
       <div>Rodríguez Jiménez</div>
     </div>
     <div className="description">
-      I enjoy improving people's lives through science and technology. I am excited about clean energy and learning about the world.
+      I enjoy improving people's lives through science and technology. I am excited about the transition to sustainable energy and learning about the world.
     </div>  
   </div>  
   )
@@ -38,7 +38,7 @@ const SectionSelector = (props) =>{
     ["🎓",SECTION_NAME_EDUCATION],
     ["👔",SECTION_NAME_JOBS],
   ["🔭",SECTION_NAME_PROJECTS],
-  ["👨🏻‍💻",SECTION_NAME_PROGRAMMING],
+  // ["👨🏻‍💻",SECTION_NAME_PROGRAMMING],
   ["🌏",SECTION_NAME_LANGUAGES],
   ["✉️",SECTION_NAME_GET_IN_TOUCH]
   ]
@@ -70,7 +70,7 @@ const JobList = (props) =>{
       <a href="https://www.apple.com">Apple</a> (July '19 - September '23 - Cupertino, CA )
     </div>            
     <div className="list-item">
-      <a href="https://www.un.org">United Nations</a> (Fall '19 - New York City, NY <span role="img" aria-label="UN logo">🇺🇳</span>)
+      <a href="https://www.un.org">United Nations</a> (Fall '19 - NYC, NY <span role="img" aria-label="UN logo">🇺🇳</span>)
     </div>
 
     <div className="list-item">
@@ -83,7 +83,7 @@ const JobList = (props) =>{
       MIT Global Teaching Labs in Entrepreneurship with<a href="https://www.babroad.com.br/copia-inicio"> B-Abroad</a> (Winter '18 - São Paulo, Brazil <span role="img" aria-label="Brazilian flag">🇧🇷</span>)
     </div>
     <div className="list-item">
-      <a href="https://morganstanley.com">Morgan Stanley</a> (Summer '17 - New York City, NY <span role="img" aria-label="Statue of Liberty">🗽</span>)
+      <a href="https://morganstanley.com">Morgan Stanley</a> (Summer '17 - NYC, NY <span role="img" aria-label="Statue of Liberty">🗽</span>)
     </div>
     <div className="list-item">
       <a href="https://take.net">Take.NET</a> (Summer '16 - Belo Horizonte, Brazil <span role="img" aria-label="Brazilian flag">🇧🇷</span>)
@@ -135,19 +135,20 @@ const ProjectsResearch = () =>
 const ProgrammingSkills = () =>(
    <div className="section-coding">
           <div className="list-item programming-language">Python <span role="img" aria-label="Snake">🐍</span></div>
-          <div className="list-item programming-language">React Native <span role="img" aria-label="Radioactive">☢️</span></div>
-          <div className="list-item programming-language">React Js<span role="img" aria-label="Radioactive">☢️</span></div>
+          <div className="list-item programming-language">React Native / JS <span role="img" aria-label="Radioactive">☢️</span></div>
           <div className="list-item programming-language">HTML/CSS/JS <span role="img" aria-label="Spiderweb">🕸</span></div>
           <div className="list-item programming-language">Java <span role="img" aria-label="Coffee">☕️</span></div>
           <div className="list-item programming-language">iOS Swift<span role="img" aria-label="Apple">🍏</span></div>
           <div className="list-item programming-language">R <span role="img" aria-label="Increasing chart">📈</span></div>
           <div className="list-item programming-language">SQL <span role="img" aria-label="Barrel">🛢</span></div>
+          <div className="list-item programming-language">PyTorch <span role="img" aria-label="Robot">🤖</span></div>
+
       </div>)
 
 const GetInTouch = () =>{
   return (
     <div id="get-in-touch" className='get-in-touch-page'>
-        <div className='get-in-touch-header'>Get in touch <span role="img" aria-label="person ridingsurfboard"> 🏄🏻‍♂️</span></div>
+        <div className='get-in-touch-header'>Get in touch <span role="img" aria-label="person contactbook"> 📇</span></div>
         <SocialMedia />
         <Email/>  
     </div>
@@ -156,10 +157,10 @@ const GetInTouch = () =>{
 
 const Languages = ()=>
   (<div className='section-languages' style={{listStyleType: 'none'}}>
-            <div className="list-item language-item"><strong>English</strong><span role="img" aria-label="US Flag">🇺🇸</span>(Native)</div>
-            <div className="list-item language-item"><strong>Spanish</strong><span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>(Native)</div>
-            <div className="list-item language-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}(Fluent, took courses at MIT + lived in Brazil 4 months)</div>
-            <div className="list-item language-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}(Intermediate, 5yrs of instruction)</div>
+            <div className="list-item language-item"><strong>English</strong><span role="img" aria-label="US Flag">🇺🇸</span>{<br/>}Native</div>
+            <div className="list-item language-item"><strong>Spanish</strong><span role="img" aria-label="Puerto Rican Flag">🇵🇷</span>{<br/>}Native</div>
+            <div className="list-item language-item"><strong>Portuguese</strong><span role="img" aria-label="Brazilian Flag">🇧🇷</span>{<br/>}Fluent, took courses at MIT + lived in Brazil 4 months</div>
+            <div className="list-item language-item"><strong>French</strong><span role="img" aria-label="French Flag">🇫🇷</span>{<br/>}Intermediate, 5yrs of instruction</div>
             <div className="list-item language-item"><strong>Japanese</strong><span role="img" aria-label="Japanese Flag">🇯🇵</span>{<br/>}Took first year Japanese</div>
             <div className="list-item language-item"><strong>Arabic</strong><span role="letter" aria-label="Arabic letter dha">ض</span>{<br/>}Took introductory Arabic course</div>
     </div>
@@ -237,7 +238,7 @@ function App() {
     return (
       <div className='section-education'>
         <strong>Oxford MSc Energy Systems '24</strong>{<br/>}
-        Research in artificial intelligence to forecast time series energy data{<br/>}{<br/>}
+        Dissertation on applying generative artificial intelligence to forecast electricity prices{<br/>}{<br/>}
         <strong>MIT Master of Engineering '19</strong>{<br/>}
         Computer Science and Engineering, Concentration in Artificial Intelligence{<br/>}{<br/>}
         <strong>MIT Bachelor of Science '18</strong>{<br/>}
