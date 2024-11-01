@@ -287,6 +287,7 @@ const AppWithRouter = (props) =>{
         <Route path='/tictactoeprivacy' element={<TicTacToePrivacy/>}/>
         <Route path='/tictactoe' element={<TicTacToe/>}/>
         <Route path='/li' element={<App/>}/>
+        <Route path='/ig' element={<App/>}/>
         <Route path='/' element={<App/>}/>
       </Routes>
     </Router>
